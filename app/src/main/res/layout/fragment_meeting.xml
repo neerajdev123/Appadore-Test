@@ -9,8 +9,20 @@
     android:layout_height="match_parent"
     >
 
+    <include
+        android:id="@+id/layout_header"
+        layout="@layout/layout_meeting_header"/>
 
-    <include layout="@layout/layout_meeting_header"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_meeting_participiants"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constrainedHeight="false"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
