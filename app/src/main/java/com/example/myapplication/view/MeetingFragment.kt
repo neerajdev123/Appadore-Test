@@ -1,5 +1,6 @@
 package com.example.myapplication.view
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,10 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplication.R
 import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.databinding.FragmentMeetingBinding
 import com.example.myapplication.view.adapter.CommentAdapter
 import com.example.myapplication.view.adapter.ParticipantAdapter
+
 
 private const val TOTAL_SPAN_COUNT = 2
 private const val SPEAKER_SPAN_COUNT = 1
@@ -36,19 +39,45 @@ class MeetingFragment : Fragment() {
         init()
     }
 
+    override fun onResume() {
+        super.onResume()
+        binding?.videoView?.onResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        binding?.videoView?.onPause()
+    }
+
     private fun init(){
-        binding?.rvMeetingParticipants.run{
+        initParticipantList()
+        initCommentList()
+        binding?.fab?.setOnClickListener { _ ->
+            binding?.videoView?.visibility = View.VISIBLE
+            val uri : Uri = Uri.parse("android.resource://" + context?.packageName + "/" + R.raw.video)
+            binding?.videoView?.setVideoFromUri(context,uri)
+            binding?.videoView?.setLooping(false)
+            binding?.videoView?.setOnVideoEndedListener {
+                binding?.videoView?.visibility = View.GONE
+            }
+        }
+    }
+
+    private fun initCommentList() {
+        binding?.rvComments.run {
+            commentAdapter = CommentAdapter()
+            commentAdapter?.setCommentData(StaticDataSource.dummyComments)
+            this?.adapter = commentAdapter
+            this?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        }
+    }
+
+    private fun initParticipantList() {
+        binding?.rvMeetingParticipants.run {
             participantAdapter = ParticipantAdapter()
             participantAdapter?.setParticipantData(StaticDataSource.dummyParticipants)
             this?.adapter = participantAdapter
             this?.layoutManager = getLayoutManager()
-        }
-
-        binding?.rvComments.run{
-            commentAdapter = CommentAdapter()
-            commentAdapter?.setCommentData(StaticDataSource.dummyComments)
-            this?.adapter = commentAdapter
-            this?.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
     }
 
