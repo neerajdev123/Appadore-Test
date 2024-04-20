@@ -14,7 +14,7 @@
         layout="@layout/layout_meeting_header"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_meeting_participiants"
+        android:id="@+id/rv_meeting_participants"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -23,6 +23,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_comment_header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_meeting_participants"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:padding="12dp"
+        android:text="Comments"
+        android:background="@drawable/bg_rounded_purple"
+        android:gravity="center_vertical"
+        android:textColor="@color/white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_comments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constrainedHeight="false"
+        app:layout_constraintTop_toBottomOf="@+id/tv_comment_header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/layout_send"
+        android:background="@color/light_blue"
+        android:layout_margin="4dp"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_send"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:padding="8dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="Send Message"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rounded_grey"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/baseline_send_24"
+            android:layout_gravity="center_vertical"
+            android:tint="@color/purple_700"/>
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

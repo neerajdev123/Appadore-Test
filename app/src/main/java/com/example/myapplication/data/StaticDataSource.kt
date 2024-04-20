@@ -1,12 +1,13 @@
 package com.example.myapplication.data
 
 import com.example.myapplication.R
+import com.example.myapplication.model.Comment
 import com.example.myapplication.model.Participant
 
 object StaticDataSource {
 
    val dummyParticipants = getParticipants()
-
+   val dummyComments = getComments()
 
 }
 
@@ -29,4 +30,22 @@ fun getParticipants() : List<Participant>{
     participants.add(participant7)
 
     return participants
+}
+
+fun getComments() : List<Comment>{
+
+    val comment1 = Comment(R.drawable.comment5, "Garry", "Sent a gift to Adam")
+    val comment2 = Comment(R.drawable.comment2, "Smith", "Sent a gift to John")
+    val comment3 = Comment(R.drawable.comment3, "Mary", "Sent a gift to Steve")
+    val comment4 = Comment(R.drawable.comment4, "Glenn", "Sent a gift to Elvis")
+
+    val comments = mutableListOf<Comment>()
+
+    comments.add(comment1)
+    comments.add(comment2)
+    comments.add(comment3)
+    comments.add(comment4)
+
+    return comments
+
 }

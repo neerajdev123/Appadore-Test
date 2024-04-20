@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/img_cmt_user"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="5dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@android:color/darker_gray"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        android:src="@drawable/comment1"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_cmt_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thomas"
+        app:layout_constraintStart_toEndOf="@+id/img_cmt_user"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_cmt_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sent a gift to Tom"
+        app:layout_constraintStart_toEndOf="@+id/tv_cmt_user"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

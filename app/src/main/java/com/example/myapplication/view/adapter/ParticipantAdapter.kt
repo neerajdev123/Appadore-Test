@@ -30,9 +30,9 @@ class ParticipantAdapter : RecyclerView.Adapter<ParticipantViewHolder>()  {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setParticipantData(deptSchedules: List<Participant>) {
+    fun setParticipantData(participantData: List<Participant>) {
         participants.clear()
-        participants.addAll(deptSchedules)
+        participants.addAll(participantData)
         notifyDataSetChanged()
     }
 }

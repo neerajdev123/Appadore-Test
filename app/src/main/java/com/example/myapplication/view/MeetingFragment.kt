@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.databinding.FragmentMeetingBinding
+import com.example.myapplication.view.adapter.CommentAdapter
 import com.example.myapplication.view.adapter.ParticipantAdapter
 
 private const val TOTAL_SPAN_COUNT = 2
@@ -18,7 +19,8 @@ private const val PARTICIPANT_SPAN_COUNT = 1
 class MeetingFragment : Fragment() {
 
     private var binding : FragmentMeetingBinding? = null
-    private var adapter: ParticipantAdapter? = null
+    private var participantAdapter: ParticipantAdapter? = null
+    private var commentAdapter: CommentAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,11 +37,18 @@ class MeetingFragment : Fragment() {
     }
 
     private fun init(){
-        binding?.rvMeetingParticipiants.run{
-            adapter = ParticipantAdapter()
-            adapter?.setParticipantData(StaticDataSource.dummyParticipants)
-            this?.adapter = adapter
+        binding?.rvMeetingParticipants.run{
+            participantAdapter = ParticipantAdapter()
+            participantAdapter?.setParticipantData(StaticDataSource.dummyParticipants)
+            this?.adapter = participantAdapter
             this?.layoutManager = getLayoutManager()
+        }
+
+        binding?.rvComments.run{
+            commentAdapter = CommentAdapter()
+            commentAdapter?.setCommentData(StaticDataSource.dummyComments)
+            this?.adapter = commentAdapter
+            this?.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
     }
 
