@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:src="@drawable/baseline_supervised_user_circle_24"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/common_padding_16_dp"
         />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -25,7 +25,7 @@
         app:layout_constraintBottom_toTopOf="@+id/txt_role"
         android:text="@string/host_name_sample"
         android:textColor="@color/white"
-        android:layout_marginStart="16dp"/>
+        android:layout_marginStart="@dimen/common_padding_16_dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txt_role"
@@ -44,7 +44,7 @@
         app:layout_constraintTop_toTopOf="@id/img_profile"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/baseline_more_vert_24"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/common_padding_16_dp"
         android:tint="@color/white"/>
 
 

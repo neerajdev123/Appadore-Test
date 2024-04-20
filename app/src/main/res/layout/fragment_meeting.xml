@@ -18,7 +18,7 @@
         android:id="@+id/rv_meeting_participants"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/common_padding_8_dp"
         app:layout_constrainedHeight="false"
         app:layout_constraintTop_toBottomOf="@+id/layout_header"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,10 +32,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_meeting_participants"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="2dp"
-        android:padding="12dp"
+        android:layout_marginTop="@dimen/common_padding_16_dp"
+        android:layout_marginStart="@dimen/common_padding_2_dp"
+        android:layout_marginEnd="@dimen/common_padding_2_dp"
+        android:padding="@dimen/common_padding_12_dp"
         android:text="@string/comments_header"
         android:background="@drawable/bg_rounded_purple"
         android:gravity="center_vertical"
@@ -45,14 +45,14 @@
         android:id="@+id/rv_comments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/common_padding_8_dp"
         app:layout_constrainedHeight="false"
         app:layout_constraintTop_toBottomOf="@+id/tv_comment_header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/layout_send"
         android:background="@color/light_blue"
-        android:layout_margin="4dp"
+        android:layout_margin="@dimen/common_padding_4_dp"
         />
 
     <com.alphamovie.lib.AlphaMovieView
@@ -74,7 +74,7 @@
         android:src="@drawable/baseline_card_giftcard_24"
         android:backgroundTint="@color/purple_700"
         android:contentDescription="@string/fab_cd"
-        android:layout_margin="16dp"
+        android:layout_margin="@dimen/common_padding_16_dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_send"
         app:layout_constraintEnd_toEndOf="parent"/>
 
@@ -89,10 +89,10 @@
         >
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:padding="8dp"
+            android:padding="@dimen/common_padding_8_dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/common_padding_8_dp"
             android:hint="@string/send_message_hint"
             android:layout_weight="1"
             android:background="@drawable/bg_rounded_grey"/>
@@ -100,7 +100,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/common_padding_8_dp"
             android:src="@drawable/baseline_send_24"
             android:layout_gravity="center_vertical"
             android:tint="@color/purple_700"/>
