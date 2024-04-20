@@ -39,7 +39,7 @@
         android:text="@string/comments_header"
         android:background="@drawable/bg_rounded_purple"
         android:gravity="center_vertical"
-        android:textColor="@color/white"/>
+        style="@style/Header"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_comments"

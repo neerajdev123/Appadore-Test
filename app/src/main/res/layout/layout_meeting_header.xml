@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="@id/img_profile"
         app:layout_constraintBottom_toTopOf="@+id/txt_role"
         android:text="@string/host_name_sample"
-        android:textColor="@color/white"
+        style="@style/Header"
         android:layout_marginStart="@dimen/common_padding_16_dp"/>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="@id/img_profile"
         app:layout_constraintStart_toStartOf="@id/txt_user_name"
         android:text="@string/host_role"
-        android:textColor="@color/white"
+        style="@style/HeaderRole"
         />
 
     <androidx.appcompat.widget.AppCompatImageView
