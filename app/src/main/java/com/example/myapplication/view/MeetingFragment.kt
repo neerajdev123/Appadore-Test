@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
@@ -13,6 +14,7 @@ import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.databinding.FragmentMeetingBinding
 import com.example.myapplication.view.adapter.CommentAdapter
 import com.example.myapplication.view.adapter.ParticipantAdapter
+import com.example.myapplication.viewmodel.MeetingViewModel
 
 
 private const val TOTAL_SPAN_COUNT = 2
@@ -24,6 +26,7 @@ class MeetingFragment : Fragment() {
     private var binding : FragmentMeetingBinding? = null
     private var participantAdapter: ParticipantAdapter? = null
     private var commentAdapter: CommentAdapter? = null
+    private val viewModel: MeetingViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +53,7 @@ class MeetingFragment : Fragment() {
     }
 
     private fun init(){
+        setUserData()
         initParticipantList()
         initCommentList()
         binding?.fab?.setOnClickListener { _ ->
@@ -63,21 +67,34 @@ class MeetingFragment : Fragment() {
         }
     }
 
-    private fun initCommentList() {
-        binding?.rvComments.run {
-            commentAdapter = CommentAdapter()
-            commentAdapter?.setCommentData(StaticDataSource.dummyComments)
-            this?.adapter = commentAdapter
-            this?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        }
+    private fun setUserData(){
+        //fetching user data from view model
+        //synchronous flow as data is static, should be replaced by livedata/flow for asynchronous flow
+        val userDetails = viewModel.getUserDetails()
+        binding?.layoutHeader?.txtUserName?.text = userDetails.name
+        binding?.layoutHeader?.txtRole?.text = userDetails.role
+        binding?.layoutHeader?.imgProfile?.setImageResource(userDetails.profileUrl)
     }
 
     private fun initParticipantList() {
         binding?.rvMeetingParticipants.run {
             participantAdapter = ParticipantAdapter()
-            participantAdapter?.setParticipantData(StaticDataSource.dummyParticipants)
+            //fetching participant data from view model
+            //synchronous flow as data is static, should be replaced by livedata/flow for asynchronous flow
+            participantAdapter?.setParticipantData(viewModel.getParticipantData())
             this?.adapter = participantAdapter
             this?.layoutManager = getLayoutManager()
+        }
+    }
+
+    private fun initCommentList() {
+        binding?.rvComments.run {
+            commentAdapter = CommentAdapter()
+            //fetching comment data from view model
+            //synchronous flow as data is static, should be replaced by livedata/flow for asynchronous flow
+            commentAdapter?.setCommentData(viewModel.getCommentData())
+            this?.adapter = commentAdapter
+            this?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
     }
 

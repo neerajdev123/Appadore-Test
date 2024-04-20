@@ -3,11 +3,13 @@ package com.example.myapplication.data
 import com.example.myapplication.R
 import com.example.myapplication.model.Comment
 import com.example.myapplication.model.Participant
+import com.example.myapplication.model.User
 
 object StaticDataSource {
 
    val dummyParticipants = getParticipants()
    val dummyComments = getComments()
+   val dummyUser = User("Esther Howard", "Host", R.drawable.dp7)
 
 }
 
