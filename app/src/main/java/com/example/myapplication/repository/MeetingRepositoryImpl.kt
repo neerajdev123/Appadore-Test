@@ -4,17 +4,20 @@ import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.model.Comment
 import com.example.myapplication.model.Participant
 import com.example.myapplication.model.User
+import javax.inject.Inject
 
-class MeetingRepositoryImpl : MeetingRepository {
+class MeetingRepositoryImpl @Inject constructor(
+    private val staticDataSource: StaticDataSource
+) : MeetingRepository {
     override fun getUserDetails(): User {
-        return StaticDataSource.dummyUser
+        return staticDataSource.dummyUser
     }
 
     override fun getParticipantList(): List<Participant> {
-        return StaticDataSource.dummyParticipants
+        return staticDataSource.dummyParticipants
     }
 
     override fun getCommentList(): List<Comment> {
-        return StaticDataSource.dummyComments
+        return staticDataSource.dummyComments
     }
 }

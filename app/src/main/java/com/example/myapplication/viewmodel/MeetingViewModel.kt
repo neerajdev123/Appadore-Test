@@ -1,15 +1,16 @@
 package com.example.myapplication.viewmodel
 
 import androidx.lifecycle.ViewModel
-import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.model.Comment
 import com.example.myapplication.model.Participant
 import com.example.myapplication.repository.MeetingRepository
-import com.example.myapplication.repository.MeetingRepositoryImpl
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class MeetingViewModel : ViewModel() {
-
-    private val repository : MeetingRepository = MeetingRepositoryImpl()
+@HiltViewModel
+class MeetingViewModel @Inject constructor(
+    private val repository: MeetingRepository
+) : ViewModel() {
 
     fun getUserDetails() = repository.getUserDetails()
 

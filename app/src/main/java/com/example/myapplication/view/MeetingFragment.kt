@@ -10,17 +10,18 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myapplication.R
-import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.databinding.FragmentMeetingBinding
 import com.example.myapplication.view.adapter.CommentAdapter
 import com.example.myapplication.view.adapter.ParticipantAdapter
 import com.example.myapplication.viewmodel.MeetingViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
 
 private const val TOTAL_SPAN_COUNT = 2
 private const val SPEAKER_SPAN_COUNT = 1
 private const val PARTICIPANT_SPAN_COUNT = 1
 
+@AndroidEntryPoint
 class MeetingFragment : Fragment() {
 
     private var binding : FragmentMeetingBinding? = null
