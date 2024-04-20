@@ -6,7 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.myapplication.R
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MeetingActivity : AppCompatActivity(R.layout.activity_main) {
 
     private lateinit var navController: NavController
 

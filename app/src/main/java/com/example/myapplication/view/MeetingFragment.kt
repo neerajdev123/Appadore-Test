@@ -6,19 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.myapplication.data.StaticDataSource
 import com.example.myapplication.databinding.FragmentMeetingBinding
 import com.example.myapplication.view.adapter.ParticipantAdapter
 
 private const val TOTAL_SPAN_COUNT = 2
-private const val SPEAKER_SPAN_COUNT = 2
+private const val SPEAKER_SPAN_COUNT = 1
 private const val PARTICIPANT_SPAN_COUNT = 1
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MeetingFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MeetingFragment : Fragment() {
 
     private var binding : FragmentMeetingBinding? = null
@@ -55,7 +51,7 @@ class MeetingFragment : Fragment() {
     ).apply {
         spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int) =
-                if (StaticDataSource.dummyParticipants[position].isHost) {
+                if (position == 0) {
                     SPEAKER_SPAN_COUNT
                 } else {
                     PARTICIPANT_SPAN_COUNT
