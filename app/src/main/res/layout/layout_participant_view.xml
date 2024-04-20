@@ -9,8 +9,8 @@
         android:id="@+id/card_participant"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="4dp"
-        app:cardCornerRadius="8dp"
+        android:elevation="@dimen/common_padding_4_dp"
+        app:cardCornerRadius="@dimen/common_padding_8_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="@dimen/common_padding_16_dp">

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="@dimen/header_height"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/purple_700">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_profile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/header_profile_size"
+        android:layout_height="@dimen/header_profile_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,7 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/header_profile_size"
         app:layout_constraintTop_toTopOf="@id/img_profile"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/baseline_more_vert_24"

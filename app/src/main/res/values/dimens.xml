@@ -6,4 +6,8 @@
     <dimen name="common_padding_8_dp">8dp</dimen>
     <dimen name="common_padding_16_dp">16dp</dimen>
     <dimen name="common_padding_12_dp">12dp</dimen>
+    <dimen name="common_padding_50_dp">50dp</dimen>
+    <dimen name="common_padding_70_dp">70dp</dimen>
+    <dimen name="header_height">100dp</dimen>
+    <dimen name="header_profile_size">50dp</dimen>
 </resources>

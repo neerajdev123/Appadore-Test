@@ -6,8 +6,8 @@
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/img_cmt_user"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="@dimen/common_padding_70_dp"
+        android:layout_height="@dimen/common_padding_70_dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
