@@ -7,7 +7,7 @@
     <string name="send_message_hint">Send Message</string>
     <string name="comment_user_placeholder">Thomas</string>
     <string name="comment_sample_placeholder">Sent a gift to Tom</string>
-    <string name="host_name_sample">Esther Howard</string>
-    <string name="host_role">Host</string>
+    <string name="host_name_sample">User name</string>
+    <string name="host_role">User role</string>
     <string name="speaker_name_placeholder">Speaker Name</string>
 </resources>
