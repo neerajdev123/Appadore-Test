@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rv_meeting_participants"
-        android:layout_marginTop="@dimen/common_padding_16_dp"
+        android:layout_marginTop="@dimen/common_padding_8_dp"
         android:layout_marginStart="@dimen/common_padding_2_dp"
         android:layout_marginEnd="@dimen/common_padding_2_dp"
         android:padding="@dimen/common_padding_12_dp"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_card_giftcard_24"
-        android:backgroundTint="@color/purple_700"
+        android:backgroundTint="@color/blue_primary"
         android:contentDescription="@string/fab_cd"
         android:layout_margin="@dimen/common_padding_16_dp"
         app:layout_constraintBottom_toTopOf="@+id/layout_send"
@@ -103,7 +103,7 @@
             android:layout_margin="@dimen/common_padding_8_dp"
             android:src="@drawable/baseline_send_24"
             android:layout_gravity="center_vertical"
-            android:tint="@color/purple_700"/>
+            android:tint="@color/blue_primary"/>
 
 
     </LinearLayout>
